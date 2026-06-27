@@ -10,7 +10,7 @@
 | 2 | paymentFailure | **2** | **2** | 両者 payment。A=rc_err 4/4＋複数Criticalから切り分け(確信度高)／B=症状から自明 |
 | 3 | cartFailure | – | – | |
 | 4 | adManualGc | **2** | **2** | 両者 ad のレイテンシ/GC を特定。A=p50突出をデータで／B=症状推論＋デモ知識 |
-| 5 | recommendationCacheFailure | – | – | |
+| 5 | recommendationCacheFailure | **1** | **2** | **初の差**。メモリリークはAPMに即出ず、A=断定不可と正直に留保／B=症状から的中 |
 | 6 | kafkaQueueProblems | – | – | |
 | **合計 (/12)** | | – | – | |
 
