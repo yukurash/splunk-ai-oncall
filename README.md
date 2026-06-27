@@ -125,7 +125,13 @@ pwsh scripts/run-scenario.ps1 -Scenario 1
 
 ## 結果（実走済み: demo v2.2.0 / realm jp0）
 
-6シナリオを実走（回答役は正解を知らない Claude サブエージェント）。詳細は [`results/scorecard.md`](./results/scorecard.md) と各 `results/scenario-0X/`。
+### ⭐ 目玉: 自律オンコール実走
+症状を一切教えず「本番で異常、調べて」だけで、Claude が **自分で Splunk MCP ツールを7回選んで** 3往復の調査を行い、
+**根本原因（product-catalog の GetProduct エンドポイント）を断定 → 派手な上流エラーを波及と切り分け → 同時発生の別障害(payment)を分離 → ノイズ除外 → 確信度を正直に校正**、まで完走した。
+→ 全トランスクリプト（AIの思考＋叩いたツール＋最終結論）: **[`results/autonomous-incident/transcript.md`](./results/autonomous-incident/transcript.md)**
+
+### 比較（参考）: ツールあり/なし
+6シナリオで A(Claude+MCP) と B(素のClaude) を採点。詳細は [`results/scorecard.md`](./results/scorecard.md) と各 `results/scenario-0X/`。
 
 | # | 障害 | A: Claude+MCP | B: 素のClaude |
 |---|---|:--:|:--:|
