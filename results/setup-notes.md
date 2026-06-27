@@ -23,6 +23,16 @@
 3. **Collector の config マージは配列を“置換”**: extras の pipeline で base の exporter（traces=[debug, span_metrics]）を書き忘れると消える。`exporters: [debug, span_metrics, otlphttp/splunk]` のように repeat する。
 4. **flag の有効化は単純な on/off ではない**: `paymentFailure` は `100%` 等のパーセント変種、`productCatalogFailure` は targeting（特定商品 OLJCESPC7Z のみ）。`scripts/set-flag.ps1` が targeting の then 枝も書き換えるよう実装。
 
+## MCP ゲートウェイ疎通（curl で実証済み）
+- `POST https://region-tyo10.api.scs.splunk.com/system/mcp-gateway/v1/`（ヘッダ `X-SF-TOKEN`/`X-SF-REALM`）
+  → `initialize` が HTTP 200、`Unified MCP Gateway v3.0.2` 応答。`tools/list` も 200。
+- 実ツール名（12個）: `o11y_get_apm_services` / `o11y_get_apm_service_dependencies` /
+  `o11y_get_apm_service_errors_and_requests` / `o11y_get_apm_service_latency` /
+  `o11y_get_apm_exemplar_traces` / `o11y_get_apm_trace_tool` / `o11y_search_alerts_or_incidents` /
+  `o11y_get_metric_names` / `o11y_get_metric_metadata` / `o11y_generate_signalflow_program` /
+  `o11y_execute_signalflow_program` / `o11y_get_apm_environments`
+- セッションIDは不要（ステートレスに応答）。→ `prompts/oncall-system.md` を実ツール名に更新済み。
+
 ## まだやってないこと（本番実行）
-- Claude Code ↔ Splunk MCP 接続のスモーク（別セッションで `claude mcp list`）
-- 6シナリオの A/B 実走・採点・記事の実データ埋め（→ `RUNBOOK.md`）
+- 6シナリオの A/B 実走・採点・記事の実データ埋め（→ `RUNBOOK.md`）。
+  ※ Claude が MCP を使うので、リポジトリ直下で env export して起動した**別の Claude Code セッション**で行う。
