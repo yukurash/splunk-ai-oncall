@@ -1,0 +1,25 @@
+# ────────────────────────────────────────────────────────────────────────
+# OpenTelemetry Demo に被せる Splunk 連携オーバーレイ。
+#
+# 使い方 (demo を clone したディレクトリで):
+#   docker compose --env-file ../.env \
+#     -f docker-compose.yml \
+#     -f ../docker-compose.splunk.yml up -d
+#
+# やっていること:
+#   - demo の Collector サービスに Splunk 用の環境変数を注入する。
+#   - otelcol-config-extras.yml は demo 同梱パスに cp 済み前提
+#     (README のクイックスタート参照)。
+#
+# ⚠️ Collector のサービス名は demo のバージョンで異なる。
+#    近年は `otel-collector`。古い版は `otelcol`。
+#    `docker compose config --services | grep -i otel` で確認して合わせること。
+# ────────────────────────────────────────────────────────────────────────
+
+services:
+  otel-collector:
+    environment:
+      - SPLUNK_ACCESS_TOKEN=${SPLUNK_ACCESS_TOKEN}
+      - SPLUNK_REALM=${SPLUNK_REALM}
+      - SPLUNK_HEC_TOKEN=${SPLUNK_HEC_TOKEN}
+      - SPLUNK_HEC_URL=${SPLUNK_HEC_URL}

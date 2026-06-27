@@ -1,0 +1,13 @@
+{
+  "$comment": "Claude Code 用の Splunk Observability MCP サーバー設定。値は .env から ${VAR} で展開される。生のトークンは絶対にここへ書かないこと。",
+  "mcpServers": {
+    "splunk-o11y": {
+      "type": "http",
+      "url": "${SPLUNK_MCP_URL}",
+      "headers": {
+        "X-SF-REALM": "${SPLUNK_REALM}",
+        "X-SF-TOKEN": "${SPLUNK_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# secrets / local config
+.env
+.env.local
+*.token
+
+# the cloned OpenTelemetry demo (not vendored here)
+opentelemetry-demo/
+
+# node
+node_modules/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# raw experiment scratch (keep curated results, ignore temp dumps)
+results/**/*.raw
+results/**/_tmp/
