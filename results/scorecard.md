@@ -11,7 +11,7 @@
 | 3 | cartFailure | – | – | |
 | 4 | adManualGc | **2** | **2** | 両者 ad のレイテンシ/GC を特定。A=p50突出をデータで／B=症状推論＋デモ知識 |
 | 5 | recommendationCacheFailure | **1** | **2** | **初の差**。メモリリークはAPMに即出ず、A=断定不可と正直に留保／B=症状から的中 |
-| 6 | kafkaQueueProblems | – | – | |
+| 6 | kafkaQueueProblems | **2** | **2** | 両者 Kafka lag。A は email 1件/checkout 36件の定量異常を発見（間接効果をデータで捕捉） |
 | **合計 (/12)** | | – | – | |
 
 ## 所要時間・コスト

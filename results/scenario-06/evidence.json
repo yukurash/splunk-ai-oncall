@@ -1,0 +1,588 @@
+{
+ "collected_at": "2026-06-27T05:26:59.502Z",
+ "environment": "unknown",
+ "time_range": {
+  "start": "-3m",
+  "stop": "now"
+ },
+ "services": [
+  {
+   "name": "flagd.evaluation.v2.Service",
+   "health": "Critical",
+   "requestCount": 15,
+   "errorCount": 5,
+   "rootCauseErrorCount": 5,
+   "p50us": 2500,
+   "p90us": 400737826,
+   "p99us": 455136252
+  },
+  {
+   "name": "frontend-proxy",
+   "health": "Ok",
+   "requestCount": 5505,
+   "errorCount": 5,
+   "rootCauseErrorCount": 1,
+   "p50us": 3806,
+   "p90us": 17770,
+   "p99us": 3458784
+  },
+  {
+   "name": "frontend",
+   "health": "Ok",
+   "requestCount": 3979,
+   "errorCount": 4,
+   "rootCauseErrorCount": 4,
+   "p50us": 3702,
+   "p90us": 17773,
+   "p99us": 48609
+  },
+  {
+   "name": "local-llm.com",
+   "health": "Critical",
+   "requestCount": 4,
+   "errorCount": 4,
+   "rootCauseErrorCount": 4,
+   "p50us": 240500,
+   "p90us": 305300,
+   "p99us": 319880
+  },
+  {
+   "name": "ad",
+   "health": "Ok",
+   "requestCount": 114,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 1792,
+   "p90us": 4595,
+   "p99us": 18600
+  },
+  {
+   "name": "cart",
+   "health": "Ok",
+   "requestCount": 386,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 1197,
+   "p90us": 3959,
+   "p99us": 9285
+  },
+  {
+   "name": "payment",
+   "health": "Critical",
+   "requestCount": 2,
+   "errorCount": 1,
+   "rootCauseErrorCount": 1,
+   "p50us": 300000000,
+   "p90us": 419365606,
+   "p99us": 446222868
+  },
+  {
+   "name": "product-reviews",
+   "health": "Ok",
+   "requestCount": 95,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 19213,
+   "p90us": 46447,
+   "p99us": 308059026
+  },
+  {
+   "name": "recommendation",
+   "health": "Ok",
+   "requestCount": 277,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 5022,
+   "p90us": 9839,
+   "p99us": 23450
+  },
+  {
+   "name": "checkout",
+   "health": "Ok",
+   "requestCount": 36,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 554,
+   "p90us": 955,
+   "p99us": 29953
+  },
+  {
+   "name": "currency",
+   "health": "Ok",
+   "requestCount": 321,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 248,
+   "p90us": 438,
+   "p99us": 481
+  },
+  {
+   "name": "email",
+   "health": "Ok",
+   "requestCount": 1,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 3995,
+   "p90us": 3995,
+   "p99us": 3995
+  },
+  {
+   "name": "flagd:8013",
+   "health": "Ok",
+   "requestCount": 1,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 6879,
+   "p90us": 6879,
+   "p99us": 6879
+  },
+  {
+   "name": "flagd:8016",
+   "health": "Ok",
+   "requestCount": 8,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 2000,
+   "p90us": 25199,
+   "p99us": 43915
+  },
+  {
+   "name": "frontend-web",
+   "health": "Ok",
+   "requestCount": 2171,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 45528,
+   "p90us": 182636,
+   "p99us": 2429000
+  },
+  {
+   "name": "image-provider",
+   "health": "Ok",
+   "requestCount": 1394,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 500,
+   "p90us": 900,
+   "p99us": 990
+  },
+  {
+   "name": "load-generator",
+   "health": "Ok",
+   "requestCount": 160,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 2192308,
+   "p90us": 3785714,
+   "p99us": 42550540
+  },
+  {
+   "name": "postgresql",
+   "health": "Ok",
+   "requestCount": 1583,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 1246,
+   "p90us": 3997,
+   "p99us": 8817
+  },
+  {
+   "name": "postgresql:astronomy_db",
+   "health": "Ok",
+   "requestCount": 90,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 1809,
+   "p90us": 4531,
+   "p99us": 8731
+  },
+  {
+   "name": "product-catalog",
+   "health": "Ok",
+   "requestCount": 1619,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 4684,
+   "p90us": 17695,
+   "p99us": 511351
+  },
+  {
+   "name": "quote",
+   "health": "Ok",
+   "requestCount": 42,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 436,
+   "p90us": 619,
+   "p99us": 660
+  },
+  {
+   "name": "redis",
+   "health": "Ok",
+   "requestCount": 479,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 720,
+   "p90us": 1923,
+   "p99us": 5262
+  },
+  {
+   "name": "shipping",
+   "health": "Ok",
+   "requestCount": 43,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 3591,
+   "p90us": 6700,
+   "p99us": 12821
+  },
+  {
+   "name": "telemetry-docs",
+   "health": "Ok",
+   "requestCount": 35,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 500,
+   "p90us": 900,
+   "p99us": 990
+  }
+ ],
+ "root_cause_error_traces": {
+  "startOffset": 0,
+  "totalItems": 2,
+  "items": [
+   {
+    "item": {
+     "traceId": "8698fd958139e013cde618b8aed3a133",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_ask_product_ai_assistant",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537897868226,
+     "durationMicros": 890858,
+     "serviceSpanCounts": [
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "local-llm.com",
+       "spanCount": 1,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "product-reviews",
+       "spanCount": 5,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "27b7121d68a2dd81d67c0faa3a2b0559",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537818784567,
+     "durationMicros": 499,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "error_traces": {
+  "startOffset": 0,
+  "totalItems": 2,
+  "items": [
+   {
+    "item": {
+     "traceId": "8698fd958139e013cde618b8aed3a133",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_ask_product_ai_assistant",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537897868226,
+     "durationMicros": 890858,
+     "serviceSpanCounts": [
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "local-llm.com",
+       "spanCount": 1,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "product-reviews",
+       "spanCount": 5,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "27b7121d68a2dd81d67c0faa3a2b0559",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537818784567,
+     "durationMicros": 499,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "slow_traces": {
+  "startOffset": 0,
+  "totalItems": 5,
+  "items": [
+   {
+    "item": {
+     "traceId": "93e5e2eaa5d4062225d4900b4902dcea",
+     "initiatingService": "frontend-web",
+     "initiatingOperation": "GET",
+     "initiatingHttpMethod": "GET",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537923016000,
+     "durationMicros": 956000,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-web",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "image-provider",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "bfa2f41309b3fc4a201827b4950b4fb8",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537914355491,
+     "durationMicros": 4050630,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "19176cc0d9786e0cd46181c2db803e8b",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537920771532,
+     "durationMicros": 3513145,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "9ad491868b86f63edf783571b0b879a9",
+     "initiatingService": "frontend-web",
+     "initiatingOperation": "documentLoad",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537926792299,
+     "durationMicros": 613401,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-web",
+       "spanCount": 45,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "1d6e7f048d392f5d73a443663070812b",
+     "initiatingService": "frontend-web",
+     "initiatingOperation": "documentLoad",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537924367900,
+     "durationMicros": 614700,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-web",
+       "spanCount": 45,
+       "errors": []
+      }
+     ]
+    }
+   }
+  ]
+ }
+}
