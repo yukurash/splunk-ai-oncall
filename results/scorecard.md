@@ -9,7 +9,7 @@
 | 1 | productCatalogFailure | **2** | **2** | 両者 product-catalog を特定。A=実データ根拠／B=デモ事前知識（汎用性なし） |
 | 2 | paymentFailure | – | – | |
 | 3 | cartFailure | – | – | |
-| 4 | adManualGc | – | – | （実行中） |
+| 4 | adManualGc | **2** | **2** | 両者 ad のレイテンシ/GC を特定。A=p50突出をデータで／B=症状推論＋デモ知識 |
 | 5 | recommendationCacheFailure | – | – | |
 | 6 | kafkaQueueProblems | – | – | |
 | **合計 (/12)** | | – | – | |
