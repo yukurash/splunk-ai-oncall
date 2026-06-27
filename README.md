@@ -123,9 +123,21 @@ pwsh scripts/run-scenario.ps1 -Scenario 1
 
 詳細は `prompts/oncall-system.md` と `scenarios/scenarios.md`。
 
-## 結果
+## 結果（実走済み: demo v2.2.0 / realm jp0）
 
-`results/scorecard.md` に集計します（実験実行後に更新）。
+6シナリオを実走（回答役は正解を知らない Claude サブエージェント）。詳細は [`results/scorecard.md`](./results/scorecard.md) と各 `results/scenario-0X/`。
+
+| # | 障害 | A: Claude+MCP | B: 素のClaude |
+|---|---|:--:|:--:|
+| 1 | product-catalog 特定商品エラー | 2 | 2 |
+| 2 | payment 決済失敗 | 2 | 2 |
+| 3 | cartFailure | 未再現(不採点) | 〃 |
+| 4 | ad GCポーズ | 2 | 2 |
+| 5 | recommendation メモリリーク | 1 | 2 |
+| 6 | Kafka コンシューマラグ | 2 | 2 |
+| | **合計(/10)** | **9** | **10** |
+
+**読み筋**: スコアは僅差だが、B(ツールなし)が強いのは OTel Demo を学習済みで暗記が効くから（自社の新規システムでは無力）。A は実データで波及と根本原因を切り分け、ノイズを除外し、確証の無い所は留保した（汎用的）。最重要は #5：メモリリークは APM に即出ず A は「断定不可・メモリ時系列を見よ」と正直に留保。→ 鍵は **AI の自律的なツール選択**（APMで足りなければメモリ/キュー metrics に自分で潜る）。
 
 ## ライセンス
 
