@@ -1,24 +1,27 @@
 # 障害シナリオ（ground truth）
 
-OpenTelemetry Demo の **feature flag** で注入する障害 6 種。
-各シナリオは「正解（根本原因）」を事前に固定し、A/B の回答を突合して採点する。
+OpenTelemetry Demo **v2.2.0** の feature flag（`src/flagd/demo.flagd.json`）で注入する障害 6 種。
+各シナリオは「正解（根本原因）」を固定し、A/B の回答を突合して採点する。
 
-> ⚠️ フラグ名・対象サービスは demo のバージョンで変わる。起動後に
-> `opentelemetry-demo/src/flagd/demo.flagd.json` か Feature Flag UI で実在を確認し、
-> 必要に応じてこの表を更新すること。
+> フラグの実在は `opentelemetry-demo/src/flagd/demo.flagd.json` で確認済み（2026-06 時点）。
+> バージョンが変わったら名前・変種を再確認すること。
 
-| # | feature flag | 想定症状（ユーザー影響） | 主に出る信号 | ✅ Ground Truth（根本原因） |
-|---|---|---|---|---|
-| 1 | `productCatalogFailure` | 特定商品の詳細でエラー、カート投入失敗 | product-catalog の span が ERROR、特定 product_id | product-catalog の GetProduct が特定 ID で失敗を返す |
-| 2 | `paymentServiceFailure` | チェックアウトの決済が失敗 | checkout→payment の span が ERROR、charge 例外 | payment サービスの charge() が例外を投げる |
-| 3 | `cartServiceFailure` | カートの取得/更新が失敗 | cart の span が ERROR、Redis 連携付近 | cart サービスが操作時にエラーを返す |
-| 4 | `adServiceManualGc` | ページ表示が間欠的に遅い | ad サービスの p99 レイテンシ急増、GC 由来の停止 | ad サービスで強制 GC が走り長い stop-the-world |
-| 5 | `recommendationServiceCacheFailure` | 時間とともにレコメンドが遅く/重く | recommendation のメモリ増・レイテンシ漸増 | recommendation の内部キャッシュが無制限に肥大 |
-| 6 | `kafkaQueueProblems` | 注文後の処理が遅延・滞留 | Kafka consumer lag 増、accounting/fraud 系の遅延 | Kafka キューの詰まりで下流処理が遅延 |
+| # | flag | 有効化の値 | 想定症状（ユーザー影響） | 主に出る信号 | ✅ Ground Truth（根本原因） |
+|---|---|---|---|---|---|
+| 1 | `productCatalogFailure` | `on`（targeting で商品 `OLJCESPC7Z` のみ） | 特定商品の詳細でエラー、その商品だけカート不可 | product-catalog の span が ERROR・product_id=OLJCESPC7Z | product-catalog の GetProduct が特定 ID で失敗 |
+| 2 | `paymentFailure` | `100%`（変種はパーセント） | チェックアウトの決済が失敗 | checkout→payment の span が ERROR、charge 失敗 | payment の charge が一定割合で失敗（ここでは100%） |
+| 3 | `cartFailure` | `on` | カートの取得/更新が失敗 | cart の span が ERROR（valkey 連携付近） | cart サービスが操作時にエラー |
+| 4 | `adManualGc` | `on` | ページ表示が間欠的に遅い | ad サービスの p99 レイテンシ急増（GC 由来の停止） | ad サービスで強制フル GC による stop-the-world |
+| 5 | `recommendationCacheFailure` | `on` | レコメンドが時間とともに重く/遅く | recommendation のメモリ漸増・レイテンシ増 | recommendation の内部キャッシュが無制限に肥大 |
+| 6 | `kafkaQueueProblems` | `on` | 注文後の後続処理が遅延・滞留 | Kafka consumer lag 増、下流(accounting/fraud)の遅延 | Kafka キュー過負荷＋consumer 遅延で lag spike |
+
+> ⚠️ #1 の `productCatalogFailure` は flagd の `targeting`（`if [cond, then, else]`）で
+> 商品 OLJCESPC7Z のときだけ失敗する設計。単に `defaultVariant` を on にしても効かないため、
+> `scripts/set-flag.ps1` は targeting の then 枝も書き換える。
 
 ## 各シナリオの「症状（ページに書く範囲）」
 
-採点を公平にするため、A/B に渡す情報は **エンドユーザー視点の症状だけ**。サービス名や原因の示唆は書かない。
+採点を公平にするため、A/B に渡すのは **エンドユーザー視点の症状だけ**。サービス名・原因の示唆は書かない。
 
 - **#1**: 「一部の商品ページでエラーが出る、という問い合わせ。該当商品はカートに入れられない」
 - **#2**: 「購入の最終確定で決済エラーになる、というクレームが複数」

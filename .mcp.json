@@ -1,13 +1,17 @@
 {
-  "$comment": "Claude Code 用の Splunk Observability MCP サーバー設定。値は .env から ${VAR} で展開される。生のトークンは絶対にここへ書かないこと。",
+  "$comment": "Claude Code 用 Splunk Observability MCP。公式の mcp-remote ブリッジ経由。値は ${VAR} で環境変数から展開されるので、claude 起動前に .env をエクスポートすること（例: set -a; . ./.env; set +a; claude）。生トークンはここへ書かない。",
   "mcpServers": {
     "splunk-o11y": {
-      "type": "http",
-      "url": "${SPLUNK_MCP_URL}",
-      "headers": {
-        "X-SF-REALM": "${SPLUNK_REALM}",
-        "X-SF-TOKEN": "${SPLUNK_ACCESS_TOKEN}"
-      }
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "${SPLUNK_MCP_URL}",
+        "--header",
+        "X-SF-TOKEN: ${SPLUNK_ACCESS_TOKEN}",
+        "--header",
+        "X-SF-REALM: ${SPLUNK_REALM}"
+      ]
     }
   }
 }

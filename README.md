@@ -75,25 +75,35 @@ cp .env.example .env
 ```
 
 ### 3. OTel Demo を取得して Splunk 連携を被せる
+（動作確認: demo **v2.2.0** / collector contrib **0.151.0**）
 ```bash
 git clone https://github.com/open-telemetry/opentelemetry-demo.git
-cp collector/otelcol-config-extras.yml opentelemetry-demo/src/otelcollector/otelcol-config-extras.yml
-# 環境変数を渡しつつ Demo + Splunk オーバーレイで起動
+# Splunk exporter 設定を demo の extras に上書き
+cp collector/otelcol-config-extras.yml opentelemetry-demo/src/otel-collector/otelcol-config-extras.yml
+
 cd opentelemetry-demo
-docker compose --env-file ../.env -f docker-compose.yml -f ../docker-compose.splunk.yml up -d
+# .env の SPLUNK_* をシェルにエクスポート（demo 自身の .env は既定で使われる）
+set -a; . ../.env; set +a
+# Splunk を唯一のバックエンドにする軽量構成（ローカル Jaeger 等は起動しない）
+docker compose -f compose.yaml -f ../docker-compose.splunk.yml up -d
 ```
-> Demo のバージョンによって Collector のサービス名・既定 exporter 名・flagd のパスが異なります。`collector/otelcol-config-extras.yml` と `docker-compose.splunk.yml` の冒頭コメントに合わせ込みのポイントを書いています。
+> compose ファイルは `compose.yaml`。観測スタックも併用したい場合は `-f compose.observability.yaml` を足し、extras の pipeline に jaeger/prometheus/opensearch の exporter 名も加える。
+> PowerShell なら `set -a; . ../.env; set +a` の代わりに各 `SPLUNK_*` を `$env:` で設定してから起動。
 
 ### 4. Splunk にデータが流れることを確認
 - Demo の Web UI: <http://localhost:8080>
 - Splunk O11y の **APM** に Astronomy Shop の各サービス／トレースが、**Metrics Finder** にメトリクスが出ていれば疎通OK。
 
 ### 5. Claude Code に Splunk MCP を接続
-`.mcp.json` を同梱しています（`${SPLUNK_*}` を `.env` から展開）。Claude Code で接続を確認：
+`.mcp.json`（公式 `mcp-remote` 経由）を同梱。`${SPLUNK_*}` は環境変数から展開されるので、
+リポジトリ直下で env をエクスポートしてから Claude Code を起動する：
 ```bash
-claude mcp list           # splunk-o11y が connected になればOK
+set -a; . ./.env; set +a
+claude              # プロジェクトの .mcp.json が読まれる
+claude mcp list     # splunk-o11y が connected になればOK
 ```
-> エンドポイント URL は realm（リージョン）依存です。`SPLUNK_MCP_URL` に Splunk の MCP gateway URL を設定してください（[公式手順](https://help.splunk.com/en/splunk-observability-cloud/splunk-ai-assistant/interact-with-your-observability-data-using-the-splunk-mcp-server)）。
+> MCP gateway URL は realm 依存。例: **jp0(Tokyo) → `https://region-tyo10.api.scs.splunk.com/system/mcp-gateway/v1/`**。
+> 対応表は [Splunk 公式](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.1/configure-splunk-observability-tools-with-splunk-mcp-server)。GCP/GovCloud realm は非対応。
 
 ### 6. シナリオを実行して採点
 ```bash
