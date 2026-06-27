@@ -1,0 +1,1322 @@
+{
+ "collected_at": "2026-06-27T05:13:58.890Z",
+ "environment": "unknown",
+ "time_range": {
+  "start": "-4m",
+  "stop": "now"
+ },
+ "services": [
+  {
+   "name": "flagd.evaluation.v2.Service",
+   "health": "Critical",
+   "requestCount": 19,
+   "errorCount": 5,
+   "rootCauseErrorCount": 5,
+   "p50us": 3500,
+   "p90us": 390015846,
+   "p99us": 463314463
+  },
+  {
+   "name": "frontend",
+   "health": "Ok",
+   "requestCount": 5677,
+   "errorCount": 5,
+   "rootCauseErrorCount": 2,
+   "p50us": 3829,
+   "p90us": 19597,
+   "p99us": 49833
+  },
+  {
+   "name": "frontend-proxy",
+   "health": "Ok",
+   "requestCount": 7995,
+   "errorCount": 5,
+   "rootCauseErrorCount": 0,
+   "p50us": 3819,
+   "p90us": 19140,
+   "p99us": 3442920
+  },
+  {
+   "name": "payment",
+   "health": "Critical",
+   "requestCount": 6,
+   "errorCount": 4,
+   "rootCauseErrorCount": 4,
+   "p50us": 1000,
+   "p90us": 363793604,
+   "p99us": 449914968
+  },
+  {
+   "name": "checkout",
+   "health": "Warning",
+   "requestCount": 52,
+   "errorCount": 3,
+   "rootCauseErrorCount": 0,
+   "p50us": 626,
+   "p90us": 4400,
+   "p99us": 41121
+  },
+  {
+   "name": "local-llm.com",
+   "health": "Critical",
+   "requestCount": 2,
+   "errorCount": 2,
+   "rootCauseErrorCount": 2,
+   "p50us": 183856,
+   "p90us": 194997,
+   "p99us": 197503
+  },
+  {
+   "name": "ad",
+   "health": "Ok",
+   "requestCount": 127,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 3581,
+   "p90us": 916071,
+   "p99us": 2865000
+  },
+  {
+   "name": "cart",
+   "health": "Ok",
+   "requestCount": 558,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 1239,
+   "p90us": 4129,
+   "p99us": 9355
+  },
+  {
+   "name": "product-reviews",
+   "health": "Ok",
+   "requestCount": 136,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 17636,
+   "p90us": 42244,
+   "p99us": 910000
+  },
+  {
+   "name": "recommendation",
+   "health": "Ok",
+   "requestCount": 396,
+   "errorCount": 1,
+   "rootCauseErrorCount": 0,
+   "p50us": 5229,
+   "p90us": 9754,
+   "p99us": 19324
+  },
+  {
+   "name": "currency",
+   "health": "Ok",
+   "requestCount": 467,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 507,
+   "p90us": 905,
+   "p99us": 994
+  },
+  {
+   "name": "email",
+   "health": "Ok",
+   "requestCount": 2,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 6499,
+   "p90us": 7421,
+   "p99us": 7629
+  },
+  {
+   "name": "flagd:8013",
+   "health": "Ok",
+   "requestCount": 1,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 7157,
+   "p90us": 7157,
+   "p99us": 7157
+  },
+  {
+   "name": "flagd:8016",
+   "health": "Ok",
+   "requestCount": 10,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 5000,
+   "p90us": 50000,
+   "p99us": 66154
+  },
+  {
+   "name": "frontend-proxy:8080",
+   "health": "Ok",
+   "requestCount": 8,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 29500,
+   "p90us": 37100,
+   "p99us": 38810
+  },
+  {
+   "name": "frontend-web",
+   "health": "Ok",
+   "requestCount": 3193,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 45844,
+   "p90us": 143720,
+   "p99us": 1765238
+  },
+  {
+   "name": "image-provider",
+   "health": "Ok",
+   "requestCount": 2123,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 500,
+   "p90us": 900,
+   "p99us": 990
+  },
+  {
+   "name": "load-generator",
+   "health": "Ok",
+   "requestCount": 205,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 2351852,
+   "p90us": 3756410,
+   "p99us": 52125000
+  },
+  {
+   "name": "postgresql",
+   "health": "Ok",
+   "requestCount": 2278,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 1296,
+   "p90us": 4016,
+   "p99us": 9280
+  },
+  {
+   "name": "postgresql:astronomy_db",
+   "health": "Ok",
+   "requestCount": 133,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 1870,
+   "p90us": 4731,
+   "p99us": 8688
+  },
+  {
+   "name": "product-catalog",
+   "health": "Ok",
+   "requestCount": 2325,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 4725,
+   "p90us": 16879,
+   "p99us": 42196
+  },
+  {
+   "name": "quote",
+   "health": "Ok",
+   "requestCount": 69,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 623,
+   "p90us": 943,
+   "p99us": 1400
+  },
+  {
+   "name": "redis",
+   "health": "Ok",
+   "requestCount": 696,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 742,
+   "p90us": 2150,
+   "p99us": 4914
+  },
+  {
+   "name": "shipping",
+   "health": "Ok",
+   "requestCount": 71,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 3583,
+   "p90us": 6611,
+   "p99us": 12673
+  },
+  {
+   "name": "telemetry-docs",
+   "health": "Ok",
+   "requestCount": 47,
+   "errorCount": 0,
+   "rootCauseErrorCount": 0,
+   "p50us": 500,
+   "p90us": 900,
+   "p99us": 990
+  }
+ ],
+ "root_cause_error_traces": {
+  "startOffset": 0,
+  "totalItems": 4,
+  "items": [
+   {
+    "item": {
+     "traceId": "085783107f80633f57efc02421afb502",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_multi",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537124414752,
+     "durationMicros": 308493,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 8,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 4,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 5,
+       "errors": []
+      },
+      {
+       "service": "checkout",
+       "spanCount": 14,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "5b9966a3f4ace9e68f29f8ebdcd2b541",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_multi",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537091986414,
+     "durationMicros": 298334,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 6,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 4,
+       "errors": []
+      },
+      {
+       "service": "checkout",
+       "spanCount": 12,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "b90cc012c677442d67b9c3f9f5ee006e",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_single",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537060548661,
+     "durationMicros": 237371,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "checkout",
+       "spanCount": 8,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "ce18ca7f5cf5db6208687e64fa231a49",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_single",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537044002525,
+     "durationMicros": 239491,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "flagd.evaluation.v2.Service",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "payment",
+       "spanCount": 3,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "checkout",
+       "spanCount": 8,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "error_traces": {
+  "startOffset": 0,
+  "totalItems": 4,
+  "items": [
+   {
+    "item": {
+     "traceId": "085783107f80633f57efc02421afb502",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_multi",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537124414752,
+     "durationMicros": 308493,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 8,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 4,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 5,
+       "errors": []
+      },
+      {
+       "service": "checkout",
+       "spanCount": 14,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "5b9966a3f4ace9e68f29f8ebdcd2b541",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_multi",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537091986414,
+     "durationMicros": 298334,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 6,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 4,
+       "errors": []
+      },
+      {
+       "service": "checkout",
+       "spanCount": 12,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "b90cc012c677442d67b9c3f9f5ee006e",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_single",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537060548661,
+     "durationMicros": 237371,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "payment",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "checkout",
+       "spanCount": 8,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "ce18ca7f5cf5db6208687e64fa231a49",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "user_checkout_single",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537044002525,
+     "durationMicros": 239491,
+     "serviceSpanCounts": [
+      {
+       "service": "product-catalog",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "load-generator",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "redis",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "cart",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "flagd.evaluation.v2.Service",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "quote",
+       "spanCount": 3,
+       "errors": []
+      },
+      {
+       "service": "postgresql",
+       "spanCount": 1,
+       "errors": []
+      },
+      {
+       "service": "shipping",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "currency",
+       "spanCount": 2,
+       "errors": []
+      },
+      {
+       "service": "payment",
+       "spanCount": 3,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": true,
+         "error": {
+          "code": "ROOT_ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "checkout",
+       "spanCount": 8,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      },
+      {
+       "service": "frontend",
+       "spanCount": 4,
+       "errors": [
+        {
+         "spanID": "",
+         "isRootCause": false,
+         "error": {
+          "code": "ERROR",
+          "message": ""
+         }
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "slow_traces": {
+  "startOffset": 0,
+  "totalItems": 5,
+  "items": [
+   {
+    "item": {
+     "traceId": "e1e041390335ab3afaa1bf9b9c7d1f7c",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "browser_add_to_cart",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537135463147,
+     "durationMicros": 3077283,
+     "serviceSpanCounts": [
+      {
+       "service": "load-generator",
+       "spanCount": 1,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "3dde9499d68e52cf15a65fa7742f1fe5",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537135911035,
+     "durationMicros": 3229132,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "325331a5aeec54aaddc423b1a66efa00",
+     "initiatingService": "frontend-proxy",
+     "initiatingOperation": "POST",
+     "initiatingHttpMethod": "POST",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537139664921,
+     "durationMicros": 3530918,
+     "serviceSpanCounts": [
+      {
+       "service": "frontend-proxy",
+       "spanCount": 2,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "1b62d380c69d90d64d205851bd86aebd",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "browser_change_currency",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537135526793,
+     "durationMicros": 2549518,
+     "serviceSpanCounts": [
+      {
+       "service": "load-generator",
+       "spanCount": 1,
+       "errors": []
+      }
+     ]
+    }
+   },
+   {
+    "item": {
+     "traceId": "d1707fe639bc30a3c8941bde78500f2e",
+     "initiatingService": "load-generator",
+     "initiatingOperation": "browser_change_currency",
+     "initiatingHttpMethod": "",
+     "initiatingSpanWasError": false,
+     "startTimeMicros": 1782537139771428,
+     "durationMicros": 2517867,
+     "serviceSpanCounts": [
+      {
+       "service": "load-generator",
+       "spanCount": 1,
+       "errors": []
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

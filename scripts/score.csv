@@ -1,8 +1,8 @@
 scenario,responder,root_cause_score,detail,time_seconds,tool_calls,tokens,cost_usd,remediation_quality,notes
 1,A,2,product-catalogの部分エラーを特定し上流の波及を切り分け,30,0,16499,,high,実データ根拠・具体フラグ名は未確認と留保(汎用的)
 1,B,2,product-catalog/productCatalogFailureとproduct_idまで断定,30,0,15359,,high,デモ事前知識による正解=汎用性なし
-2,A,,,,,,,,
-2,B,,,,,,,,
+2,A,2,paymentをrc_err4/4で特定しflagd/llmのCriticalノイズを除外,21,0,15288,,high,確信度高・ノイズ切り分けが秀逸
+2,B,2,payment/paymentServiceFailureを症状から断定,31,0,15450,,high,決済エラー→paymentは症状から自明
 3,A,,,,,,,,
 3,B,,,,,,,,
 4,A,2,adのp50突出を特定しノイズ除外・レイテンシ障害と明言,33,0,16024,,high,実データ根拠で汎用的
