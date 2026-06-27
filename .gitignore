@@ -19,3 +19,6 @@ Thumbs.db
 # raw experiment scratch (keep curated results, ignore temp dumps)
 results/**/*.raw
 results/**/_tmp/
+
+# 記事ドラフトは公開しない（Zennで仕上げる）
+article/
