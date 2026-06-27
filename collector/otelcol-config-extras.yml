@@ -15,34 +15,33 @@
 #    もし compose.observability.yaml も併用するなら、jaeger/prometheus/opensearch の
 #    exporter 名（otlp_grpc/jaeger, otlp_http/prometheus, opensearch）も足すこと。
 #
-# ⚠️ sapm は将来の collector で削除される可能性あり。起動後に collector ログで
-#    エラーが出たら traces を otlphttp に切り替える（Splunk のドキュメント参照）。
+# ⚠️ contrib 0.151.0 で `sapm` exporter は削除済み。トレースは OTLP/HTTP で送る。
+#    Splunk のトレース取込: https://ingest.<realm>.signalfx.com/v2/trace/otlp (ヘッダ X-SF-Token)
 # ────────────────────────────────────────────────────────────────────────
 
 exporters:
-  # メトリクス → Splunk O11y
+  # メトリクス → Splunk O11y (Infrastructure / APM)
   signalfx:
     access_token: "${env:SPLUNK_ACCESS_TOKEN}"
     realm: "${env:SPLUNK_REALM}"
     sync_host_metadata: true
 
-  # トレース → Splunk APM
-  sapm:
-    access_token: "${env:SPLUNK_ACCESS_TOKEN}"
-    endpoint: "https://ingest.${env:SPLUNK_REALM}.signalfx.com/v2/trace"
+  # トレース → Splunk APM (OTLP/HTTP)
+  otlphttp/splunk:
+    traces_endpoint: "https://ingest.${env:SPLUNK_REALM}.signalfx.com/v2/trace/otlp"
+    headers:
+      X-SF-Token: "${env:SPLUNK_ACCESS_TOKEN}"
 
-  # ログ → Splunk O11y Log Observer (任意)
-  splunk_hec/o11y:
-    token: "${env:SPLUNK_HEC_TOKEN}"
-    endpoint: "${env:SPLUNK_HEC_URL}"
-    source: "otel"
-    sourcetype: "otel"
+# ── ログ送信について ─────────────────────────────────────────────
+# 今回の AI 調査は APM(トレース)＋メトリクス＋アラートで完結するため、
+# ログ → Splunk は無効化（Log Observer の HEC 取込は別途設定が必要で
+# /v1/log は 404 になる）。ログも送りたい場合は splunk_hec exporter を
+# 正しい O11y ログ取込先に向けて logs パイプラインに追加すること。
+# ────────────────────────────────────────────────────────────────
 
 service:
   pipelines:
     traces:
-      exporters: [debug, span_metrics, sapm]
+      exporters: [debug, span_metrics, otlphttp/splunk]
     metrics:
       exporters: [debug, signalfx]
-    logs:
-      exporters: [debug, splunk_hec/o11y]
